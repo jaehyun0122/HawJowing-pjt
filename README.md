@@ -1,14 +1,19 @@
-# 6기 2학기 공통PJT(22/01/3 ~ 22/02/18)
+# 해줘잉(HawJowing)
 
-## 광주 1반 3팀 워라벨팀(C103)
+여러 고민들을 다른사람들과 나누고 결정에 도움을 줄 수 있는 SNS 입니다.
 
-### 프로젝트 주제
+- 개발 기간 : 22/01/3 ~ 22/02/18
+- 팀명 : 워라벨
 
 ![img](https://lh4.googleusercontent.com/oPums7AlHUAoK6ajOFOygc62xgh6lRZrGzsUsoixM0djSyu6Mo_fcWgYrVSYKzf6wcozV321rSlhQkBHPVjxWuGwuOEWBAi7sjlDdhszng2PubQYSITbpp_vfRpR4UgYii6JSNIYqJRw)
 
-- [해줘잉](http://i6c103.p.ssafy.io)
+---
 
+### 🌉개발배경
 
+점심에 뭐먹을지, 여행은 어디로 갈지 등 여러 고민들을 가지고 있습니다. 이 고민들을 다른 사람들과 나누고 의견을 받거나 줄 수 있는 모바일웹 SNS를 개발하게 되었습니다.
+
+---
 
 ### 팀원 및 역할
 
@@ -31,7 +36,6 @@
 > > Spring boot, docker
 
 - 정재현
-
 - 한윤희
 - 이은성
 
