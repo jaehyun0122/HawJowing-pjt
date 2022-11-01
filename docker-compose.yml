@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  haejwoing-back: # 컨테이너 이름
+    container_name:  hajwoing-back # 실행 컨테이너 이름
+    build:
+      context: ./back
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://localhost:3306/haejwoing?useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+      SERVER_PORT: "8080"
+    ports:
+      - 8080:8080
+    depends_on: # 이게 실행되어야 backend가 실행됨
+      - haejwoing-mysql
+    networks:
+      - haejwoing_network
+    restart: always
+    command: "java -jar /app.jar"
+
+  haejwoing-mysql:
+    image: mysql:8.0.28
+    cap_add:
+      - SYS_NICE    #mbind: Operation not permitted 오류가 발생하지 않게 된다.
+
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "hajwoing"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "root"
+    command:
+      [
+          "--character-set-server=utf8mb4",
+          "--collation-server=utf8mb4_unicode_ci"
+      ]
+    ports: # 내부의 3306포트가 외부의 3307포트로 연결됨. 외부에서 mysql에 요청하는건 없어서 신경 쓸 필요 없음. 포트 충돌떄문에 함
+      - 3307:3306
+    restart: always
+    networks:
+      - haejwoing_network
+
+  haejwoing-front:
+    container_name: haejwoing-front
+    build:
+      context: ./front
+      dockerfile: DockerfileFront
+#    volumes:
+#      - ./front/build:/docker-client/front/build
+    ports:
+      - 3001:3000
+    restart: always
+
+
+
+networks:
+  haejwoing_network:
+    driver: bridge
