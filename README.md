@@ -2,7 +2,7 @@
 
 여러 고민들을 다른사람들과 나누고 결정에 도움을 줄 수 있는 SNS 입니다.
 
-- 개발 기간 : 22/01/3 ~ 22/02/18 ( 7주 )
+- 개발 기간 : 22/01/3 ~ 22/02/18 ( 6주 )
 - 팀명 : 워라벨
 
 <img src="https://github.com/jaehyun0122/HawJowing-pjt/blob/master/README.assets/%ED%95%B4%EC%A4%98%EC%9E%89%EC%BA%90%EB%A6%AD%ED%84%B0.png" width="300" height="300"/>
